@@ -1,83 +1,65 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
-import HomeView from '../views/HomeView.vue';
-import CounterView from '../views/CounterView.vue';
-import CardView from '../views/CardBasic.vue';
+import MainLayout from '../views/layouts/Main.vue'
+// import CleanLayout from '../views/layouts/Clean.vue'
 
 
 const routes: RouteRecordRaw[] = [
     {
         path: '/',
         name: 'Home',
-        component: HomeView,
+        component: () => import('@/views/Home.vue'),
         meta: {
-          pageTitle: 'Página de Inicio',
-          breadcrumb: [
-            {
-              title: 'Counter',
-              active: true,
-              to: '/counter',
-            },
-            {
-              title: 'Card',
-              active: true,
-              to: '/card'
-            },
-            {
-              title: 'Inicio',
-              to: '/'
-            },
-          ],
+            pageTitle: 'Página de Inicio',
+            layout: MainLayout,
+            breadcrumb: [
+                // {
+                //     title: 'Counter',
+                //     active: true,
+                //     to: '/counter',
+                // },
+                {
+                    title: 'Inicio',
+                    to: '/'
+                },
+            ],
         },
     },
     {
         path: '/counter',
         name: 'Counter',
-        component: CounterView,
+        component: () => import('@/views/Counter.vue'),
         meta: {
-          pageTitle: 'Count Page',
-          breadcrumb: [
-            {
-              title: 'Inicio',
-              active: true,
-              to: '/',
-            },
-            {
-              title: 'Card',
-              active: true,
-              to: '/card'
-            },
-            {
-              title: 'Contador',
-              to: '/'
-            },
-          ],
+            pageTitle: 'Count Page',
+            layout: MainLayout,
+            breadcrumb: [
+                // {
+                //     title: 'Inicio',
+                //     active: true,
+                //     to: '/',
+                // },
+                {
+                    title: 'Contadores',
+                    to: '/'
+                },
+            ],
         },
     },
     {
-      path: '/card',
-      name: 'Card',
-      component: CardView,
-      meta: {
-        pageTitle: 'Card Page',
-        breadcrumb: [
-          {
-            title: 'Inicio',
-            active: true,
-            to: '/',
-          },
-          {
-            title: 'Contador',
-            active: true,
-            to: '/counter',
-          },
-          {
-            title: 'Card',
-            to: '/card'
-          },
-        ],
-      },
-  }
+        path: '/card',
+        name: 'Card',
+        component: () => import('@/views/CardBasic.vue'),
+        meta: {
+            pageTitle: 'Card Page',
+            layout: MainLayout,
+            breadcrumb: [
+                {
+                    title: 'Card',
+                    to: '/card'
+                },
+            ],
+        },
+    },
 ];
 
 

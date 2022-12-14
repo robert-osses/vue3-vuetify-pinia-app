@@ -30,12 +30,12 @@ const light = {
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   theme: {
-    defaultTheme: 'light',
+    defaultTheme: 'dark',
     themes: {
       light,
       dark: {
         colors: {
-          //primary: '#dd0000',
+          // primary: '#dd0000',
           secondary: '#5CBBF6',
         },
       },
