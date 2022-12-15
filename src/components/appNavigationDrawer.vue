@@ -26,24 +26,24 @@
 </template>
 
 <script setup lang="ts">
-  const navigationItems = [
-    {
-        icon: 'mdi-home',
-        title: 'Inicio',
-        value: 'inicio',
-        to: '/',
-    },
-    {
-        icon: 'mdi-plus-circle',
-        title: 'Contadores',
-        value: 'counter',
-        to: '/counter',
-    },
-    {
-        icon: 'mdi-tag',
-        title: 'Cards',
-        value: 'card',
-        to: '/card',
-    },
-  ]
+    const navigationItems = [
+        {
+            icon: 'mdi-home',
+            title: 'Inicio',
+            value: 'inicio',
+            to: '/',
+        },
+        {
+            icon: 'mdi-plus-circle',
+            title: 'Contadores',
+            value: 'counter',
+            to: '/counter',
+        },
+        {
+            icon: 'mdi-tag',
+            title: 'Cards',
+            value: 'card',
+            to: '/card',
+        },
+    ]
 </script>
