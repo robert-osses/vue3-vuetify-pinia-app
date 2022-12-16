@@ -3,6 +3,7 @@
         expand-on-hover
         rail
         elevation="9"
+        :v-bind="drawerStore.drawer"
     >
         <v-list>
             <v-list-item
@@ -26,6 +27,13 @@
 </template>
 
 <script setup lang="ts">
+    import { useDrawerStore } from '../stores/drawer';
+    const drawerStore = useDrawerStore();
+
+    // const increaseBy = ( value: boolean) => {
+    //     drawerStore.toggle( value );
+    // }
+
     const navigationItems = [
         {
             icon: 'mdi-home',
