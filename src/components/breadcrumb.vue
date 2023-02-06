@@ -7,7 +7,7 @@
       <span class="breadCrumbTitle">{{$route.meta.pageTitle.toUpperCase()}}</span>
       <span class="breadCrumbTitle">|</span>
       <router-link
-        to="/"
+        :to="{name: 'home'}"
         title="Página de Inicio"
         class="homeLink"
       >

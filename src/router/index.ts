@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
-import MainLayout from '../views/layouts/Main.vue'
+import MainLayout from '@/views/layouts/Main.vue'
 // import CleanLayout from '../views/layouts/Clean.vue'
 
 
 const routes: RouteRecordRaw[] = [
     {
         path: '/',
-        name: 'Home',
+        name: 'home',
         component: () => import('@/views/Home.vue'),
         meta: {
             pageTitle: 'Página de Inicio',
@@ -27,7 +27,7 @@ const routes: RouteRecordRaw[] = [
     },
     {
         path: '/counter',
-        name: 'Counter',
+        name: 'counter',
         component: () => import('@/views/Counter.vue'),
         meta: {
             pageTitle: 'Count Page',
@@ -47,7 +47,7 @@ const routes: RouteRecordRaw[] = [
     },
     {
         path: '/card',
-        name: 'Card',
+        name: 'card',
         component: () => import('@/views/CardBasic.vue'),
         meta: {
             pageTitle: 'Card Page',

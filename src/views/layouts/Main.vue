@@ -1,12 +1,12 @@
 <template>
     <v-app>
-        <appNavigationDrawer />
         <appBar />
+        <appNavigationDrawer />
         <v-main>
             <v-row>
-            <v-col cols="12" class="text-center">
-                <breadcrumb />
-            </v-col>
+                <v-col cols="12" class="text-center">
+                    <breadcrumb />
+                </v-col>
             </v-row>
             <router-view :key="$route.path" />
         </v-main>

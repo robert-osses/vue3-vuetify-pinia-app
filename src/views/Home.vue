@@ -24,7 +24,7 @@
     <v-row class="text-center">
         <v-col cols="12">
             <h1>
-                Home View: {{ counterStore.counter }}
+                Home View: {{ counterStore.counter }}, ({{ drawerStore.drawer }})
             </h1>
 
             <h3>Número de cambios: {{ counterStore.numberOfChanges }}</h3>
@@ -34,9 +34,12 @@
 
 
 <script lang="ts" setup>
+import { useDrawerStore } from '@/stores/drawer'
 
-import { useCounterStore } from '../stores/counter';
+import { useCounterStore } from '@/stores/counter';
 
+
+const drawerStore = useDrawerStore()
 const counterStore = useCounterStore();
 
 </script>
