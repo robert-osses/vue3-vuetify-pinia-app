@@ -13,7 +13,6 @@ export const useCounterStore = defineStore('counter', {
             this.counter += value;
             this.numberOfChanges += 1;
         }
-
     }
 })
 
