@@ -1,3 +1,8 @@
+<script setup lang="ts">
+    import { useDrawerStore } from '@/stores/drawer';
+    const drawerStore = useDrawerStore();
+</script>
+
 <template>
     <v-navigation-drawer
         expand-on-hover
@@ -16,24 +21,11 @@
         <v-divider></v-divider>
 
         <v-list density="compact" nav>
-            <v-list-item v-for="{icon, title, value, to} in drawerStore.navigationItems"
+            <v-list-item v-for="{ icon, title, to } in drawerStore.navigationItems"
                 :prepend-icon="icon"
                 :title="title"
-                :value="value"
-                :to="{name: to}"
+                :to="to"
             />
         </v-list>
     </v-navigation-drawer>
 </template>
-
-<script setup lang="ts">
-    import { watch } from "vue";
-    import { useDrawerStore } from '@/stores/drawer';
-    const drawerStore = useDrawerStore();
-
-    watch(drawerStore.drawer, (drawer) => {
-            console.log(drawer)
-        },
-        { deep: true }
-        )
-</script>

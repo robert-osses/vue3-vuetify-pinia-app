@@ -7,7 +7,7 @@
     <v-btn icon @click="toggleDrawer" class="d-lg-none">
       <dots-vertical-icon />
     </v-btn>
-    <v-template class="d-none d-lg-block">
+    <template class="d-none d-lg-block">
       <span class="ma-3">{{name}}</span>
       <v-btn icon @click="armyTheme">
         <flag-icon />
@@ -16,7 +16,7 @@
         <sun-high-icon v-if="theme.global.name.value == 'dark'" />
         <moon-icon v-else />
       </v-btn>
-    </v-template>
+    </template>
   </v-app-bar>
 </template>
 
@@ -24,7 +24,7 @@
   import { useTheme, useDisplay } from 'vuetify'
   import { SunHighIcon, MoonIcon, FlagIcon, Menu2Icon, DotsVerticalIcon } from "vue-tabler-icons";
   import { useDrawerStore } from '@/stores/drawer';
-    
+
   const drawerStore = useDrawerStore();
   const theme = useTheme()
   const { name } = useDisplay()

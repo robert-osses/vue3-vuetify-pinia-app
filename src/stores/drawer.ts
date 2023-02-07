@@ -10,20 +10,17 @@ export const useDrawerStore = defineStore('drawer', {
             {
                 icon: 'mdi-home',
                 title: 'Inicio',
-                value: 'inicio',
-                to: 'home',
+                to: { name : 'home' },
             },
             {
                 icon: 'mdi-plus-circle',
                 title: 'Contadores',
-                value: 'counter',
-                to: 'counter',
+                to: { name : 'counter' },
             },
             {
                 icon: 'mdi-tag',
                 title: 'Cards',
-                value: 'card',
-                to: 'card',
+                to: { name : 'card' },
             },
         ],
     }),
