@@ -1,11 +1,11 @@
 <script setup lang="ts">
 
-    import { useCounterStore } from '@/stores/counter'
     import { storeToRefs } from 'pinia';
+    import { useCounterStore } from '@/stores/counter'
 
     const counterStore = useCounterStore()
     const { counter } = storeToRefs( counterStore )
-    const { incrementBy } = counterStore
+    const { incrementBy, reset } = counterStore
 
 </script>
 
@@ -20,7 +20,7 @@
                 <v-btn color="secondary" prepend-icon="mdi-plus" small @click="incrementBy(2)">2</v-btn>
                 <v-btn color="info" prepend-icon="mdi-plus" small @click="incrementBy(5)">5</v-btn>
                 <v-btn color="success" prepend-icon="mdi-plus" small @click="incrementBy(9)">9</v-btn>
-                <v-btn color="warning" prepend-icon="mdi-plus" small @click="incrementBy(0)">Reset</v-btn>
+                <v-btn color="warning" prepend-icon="mdi-plus" small @click="reset">Reset</v-btn>
             </v-btn-group>
         </v-col>
     </v-row>

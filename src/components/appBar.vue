@@ -1,19 +1,21 @@
 <script setup lang="ts">
 	import { useTheme, useDisplay } from 'vuetify'
 	import { SunHighIcon, MoonIcon, FlagIcon, Menu2Icon, DotsVerticalIcon } from "vue-tabler-icons";
+
 	import { useDrawerStore } from '@/stores/drawer';
 
 	const drawerStore = useDrawerStore();
+
 	const theme = useTheme()
 	const { name } = useDisplay()
 
 	const toggleTheme = () => theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
-	const toggleDrawer = () => drawerStore.toggle();
+	const { toggle } = drawerStore;
 </script>
 
 <template>
 	<v-app-bar>
-		<v-btn icon @click="toggleDrawer" class="d-lg-none">
+		<v-btn icon @click="toggle" class="d-lg-none">
 			<menu2-icon />
 		</v-btn>
 		<flag-icon class="ml-3" />
