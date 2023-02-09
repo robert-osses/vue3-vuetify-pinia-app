@@ -13,8 +13,11 @@ import { createVuetify } from 'vuetify'
 
 const variables = {
     'theme-primary-overlay-multiplier': 3, // nivel de iluminación al hacer hover en elementos btn primary
-    'theme-info-overlay-multiplier': 3, // nivel de iluminación al hacer hover en elementos btn info
-    'theme-warning-overlay-multiplier': 3, // nivel de iluminación al hacer hover en elementos btn warning
+    'theme-info-overlay-multiplier': 3,
+    'theme-warning-overlay-multiplier': 3,
+    'theme-secondary-overlay-multiplier': 3,
+    'theme-success-overlay-multiplier': 3,
+    'theme-error-overlay-multiplier': 3,
     // 'theme-on-background': '#1a2728', // color del texto sobre background
     // 'theme-on-surface': '#1a2728', // color del texto sobre surface
     'disabled-opacity': 0.9,
@@ -23,56 +26,27 @@ const variables = {
 const light = {
     dark: false,
     colors: {
-        // background: '#FFFFFF',
-        // surface: '#FFFFFF',
-        // primary: '#B71C1C',
-        // 'primary-darken-1': '#3700B3',
-        // secondary: '#03DAC6',
-        // 'secondary-darken-1': '#018786',
-        // error: '#B00020',
-        // info: '#2196F3',
-        // success: '#4CAF50',
-        // warning: '#FB8C00',
-    }
+        background: "#ededed",
+        primary: "#B71C1C",
+        secondary: "#424242",
+        info: "#2196F3",
+        success: "#008000",
+        error: "#FF5252",
+    },
+    variables,
 }
 
 const dark = {
     light: false,
     colors: {
-        //primary: '#dd0000',
-        // info: '#000000',
-    },
-    variables,
-}
-
-const armyLight = {
-    dark: false,
-    colors: {
-        // Estilos ya utilizados (referencia)
-        background: "#ededed",
-        // surface: "#b1b1b1",
-        primary: "#B71C1C",
-        secondary: "#424242",
-        // accent: "#82B1FF",
-        error: "#FF5252",
-        info: "#2196F3",
-        success: "#008000",
-        // warning: "#FFC107",
-    }
-}
-
-const armyDark = {
-    dark: false,
-    colors: {
-        // Estilos ya utilizados (referencia)
-        primary: "#B71C1C",
-        secondary: "#424242",
-        accent: "#82B1FF",
-        error: "#FF5252",
+        background: "#000000",
+        primary: "#fb2424",
+        secondary: "#808080",
         info: "#2196F3",
         success: "#4CAF50",
-        warning: "#FFC107",
-    }
+        error: "#FF5252",
+    },
+    variables,
 }
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
@@ -82,8 +56,6 @@ export default createVuetify({
         themes: {
             light,
             dark,
-            armyLight,
-            armyDark,
         },
     }
 })

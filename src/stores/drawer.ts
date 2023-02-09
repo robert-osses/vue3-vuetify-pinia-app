@@ -1,37 +1,45 @@
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
 
-export const useDrawerStore = defineStore('drawer', {
+export const useDrawerStore = defineStore('drawer', () => {
 
-    state: () => ({
-        drawer: true,
-        rail: true,
-        navigationItems : [
-            {
-                icon: 'mdi-home',
-                title: 'Inicio',
-                to: { name : 'home' },
-            },
-            {
-                icon: 'mdi-plus-circle',
-                title: 'Contadores',
-                to: { name : 'counter' },
-            },
-            {
-                icon: 'mdi-tag',
-                title: 'Cards',
-                to: { name : 'card' },
-            },
-        ],
-    }),
+    const drawer = ref<boolean>(true)
+    const navigationItems = ref([
+        {
+            icon: 'mdi-home',
+            title: 'Inicio',
+            to: { name : 'home' },
+        },
+        {
+            icon: 'mdi-plus-circle',
+            title: 'Contadores',
+            to: { name : 'counter' },
+        },
+        {
+            icon: 'mdi-smart-card',
+            title: 'Cards',
+            to: { name : 'card' },
+        },
+        {
+            icon: 'mdi-monitor-cellphone-star',
+            title: 'Dashboard',
+            to: { name : 'dashboard' },
+        },
+    ])
 
-    actions: {
-        toggle() {
-            this.drawer = !this.drawer
-            this.rail = this.drawer ? false : true
-        }
-    },
+    function toggle() {
+        drawer.value = !drawer.value
+    }
+
+    return {
+        // state properties
+        drawer, 
+        navigationItems, 
+        
+        // getters
+
+        // actions
+        toggle,
+    }
 })
-
-
-

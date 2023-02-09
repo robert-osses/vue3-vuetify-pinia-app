@@ -34,9 +34,9 @@ const routes: RouteRecordRaw[] = [
             layout: MainLayout,
             breadcrumb: [
                 // {
-                //     title: 'Inicio',
+                //     title: 'Card',
                 //     active: true,
-                //     to: '/',
+                //     to: '/card',
                 // },
                 {
                     title: 'Contadores',
@@ -56,6 +56,21 @@ const routes: RouteRecordRaw[] = [
                 {
                     title: 'Card',
                     to: '/card'
+                },
+            ],
+        },
+    },
+    {
+        path: '/dashboard',
+        name: 'dashboard',
+        component: () => import('@/views/Dashboard.vue'),
+        meta: {
+            pageTitle: 'Dashboard',
+            layout: MainLayout,
+            breadcrumb: [
+                {
+                    title: 'Estadísticas',
+                    to: '/dashboard'
                 },
             ],
         },

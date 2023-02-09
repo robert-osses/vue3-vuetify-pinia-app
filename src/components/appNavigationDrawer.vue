@@ -1,14 +1,20 @@
 <script setup lang="ts">
-    import { useDrawerStore } from '@/stores/drawer';
-    const drawerStore = useDrawerStore();
+    import { useDisplay } from 'vuetify'
+    import { useDrawerStore } from '@/stores/drawer'
+    import { storeToRefs } from 'pinia';
+    
+    const drawerStore = useDrawerStore()
+    const { drawer } = storeToRefs(drawerStore)
+
+	const { name } = useDisplay()
 </script>
 
 <template>
     <v-navigation-drawer
         expand-on-hover
-        :rail="drawerStore.rail"
+        :rail="['xs','md'].includes(name) ? false : true"
         elevation="9"
-        v-model="drawerStore.drawer"
+        v-model="drawer"
     >
         <v-list>
             <v-list-item

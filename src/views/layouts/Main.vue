@@ -1,3 +1,9 @@
+<script setup lang="ts">
+    import breadcrumb from '@/components/breadcrumb.vue'
+    import appBar from '@/components/appBar.vue'
+    import appNavigationDrawer from '@/components/appNavigationDrawer.vue'
+</script>
+
 <template>
     <v-app>
         <appBar />
@@ -13,8 +19,10 @@
     </v-app>
 </template>
 
-<script setup lang="ts">
-    import breadcrumb from '@/components/breadcrumb.vue'
-    import appBar from '@/components/appBar.vue'
-    import appNavigationDrawer from '@/components/appNavigationDrawer.vue'
-</script>
+<style>
+    main {
+        --v-layout-bottom: 18px !important;
+        margin-right: 18px;
+        margin-left: 18px;
+    }
+</style>
