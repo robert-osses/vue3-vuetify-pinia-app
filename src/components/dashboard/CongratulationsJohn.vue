@@ -13,7 +13,7 @@ import congoImg from '@/assets/images/illustrations/congo-illustration.png'
           <h5 class="text-h5 font-weight-semibold text-primary mb-2">
             $48.9k
           </h5>
-          <VBtn>View Sales</VBtn>
+          <VBtn color="info" variant="outlined">View Sales</VBtn>
         </VCardText>
       </VCol>
 

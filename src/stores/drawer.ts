@@ -25,6 +25,16 @@ export const useDrawerStore = defineStore('drawer', () => {
             title: 'Dashboard',
             to: { name : 'dashboard' },
         },
+        {
+            icon: 'mdi-format-list-bulleted-square',
+            title: 'DataTable',
+            to: { name : 'table' },
+        },
+        {
+            icon: 'mdi-map',
+            title: 'Leaflet',
+            to: { name : 'map' },
+        },
     ])
 
     function toggle() {

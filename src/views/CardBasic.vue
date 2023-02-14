@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import { ref } from 'vue'
+	import { ref, computed } from 'vue'
 
 	import { ChevronUpIcon, ChevronDownIcon, ShoppingCartPlusIcon, ShareIcon, HelpIcon, TrendingUpIcon, StarIcon, UserIcon,LockOpenIcon } from "vue-tabler-icons";
 
@@ -20,6 +20,8 @@
 		avatar3,
 		avatar4,
 	]
+
+	const rate = ref<number>(4)
 
 	const isCardDetailsVisible = ref(false)
 </script>
@@ -200,7 +202,7 @@
 						</v-cardItem>
 
 						<v-cardText class="d-flex align-center flex-wrap body-1">
-							<VRating
+							<v-rating
 								:model-value="5"
 								readonly
 								class="me-3"
@@ -398,11 +400,11 @@
 			<v-card title="The Best Answers">
 				<v-cardText class="d-flex align-center flex-wrap">
 					<v-rating
-						:model-value="2"
+						:model-value=rate
 						density="compact"
 						class="me-3"
 					/>
-					<span class="text-subtitle-2">5 Star | 98 reviews</span>
+					<span class="text-subtitle-2">{{ rate }} Star | 98 reviews</span>
 				</v-cardText>
 
 				<v-cardText>

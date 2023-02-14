@@ -340,7 +340,7 @@ const chartOptions = computed(() => {
             height="100"
           />
 
-          <VBtn class="mt-4">
+          <VBtn color="success" variant="outlined" class="mt-4">
             Increase Button
           </VBtn>
         </VCol>

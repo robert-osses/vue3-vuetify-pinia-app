@@ -75,6 +75,37 @@ const routes: RouteRecordRaw[] = [
             ],
         },
     },
+    {
+        path: '/table',
+        name: 'table',
+        component: () => import('@/views/TablePage.vue'),
+        meta: {
+            pageTitle: 'Tabla',
+            layout: MainLayout,
+            breadcrumb: [
+                {
+                    title: 'Data Table',
+                    to: '/table'
+                },
+            ],
+        },
+    },
+    {
+        path: '/map',
+        name: 'map',
+        component: () => import('@/views/MapPage.vue'),
+        meta: {
+            pageTitle: 'Mapa',
+            layout: MainLayout,
+            breadcrumb: [
+                {
+                    title: 'Mapa demo',
+                    to: '/map'
+                },
+            ],
+        },
+    },
+    { path: '/:pathMatch(.*)*', redirect: () => ({ name: 'home' }) }
 ];
 
 
