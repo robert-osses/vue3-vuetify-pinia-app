@@ -1,10 +1,10 @@
 <template>
 	<v-breadcrumbs
 		v-if="route.meta.breadcrumb ? true : false"
-		:items="route.meta.breadcrumb"
+		:items="breadcrumb"
 	>
 		<template v-slot:prepend>
-			<span class="breadCrumbTitle">{{ route.meta.pageTitle.toUpperCase() }}</span>
+			<span class="breadCrumbTitle">{{ titulo?.toUpperCase() }}</span>
 			<span class="breadCrumbTitle">|</span>
 			<router-link
 				:to="{name: 'home'}"
@@ -22,9 +22,12 @@
 </template>
 
 <script setup lang="ts">
+	import { computed, ref } from 'vue';
 	import { useRoute } from 'vue-router';
 
 	const route = useRoute()
+	const titulo = computed(() => <string|null>route.meta.pageTitle)
+	const breadcrumb = computed(() => <any|null>route.meta.breadcrumb)
 </script>
 
 <style scoped>

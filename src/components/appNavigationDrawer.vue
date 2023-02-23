@@ -3,6 +3,8 @@
     import { useDrawerStore } from '@/stores/drawer'
     import { storeToRefs } from 'pinia';
     
+    import avatar from '@/assets/images/avatars/avatar-1.png'
+
     const drawerStore = useDrawerStore()
     const { drawer } = storeToRefs(drawerStore)
 
@@ -18,9 +20,9 @@
     >
         <v-list>
             <v-list-item
-                prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
-                title="Sandra Adams"
-                :subtitle="'san@gmailcom'"
+                :prepend-avatar="avatar"
+                title="Jhon Doe"
+                :subtitle="'jhon@gmailcom'"
             ></v-list-item>
         </v-list>
 

@@ -1,12 +1,23 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
 import MainLayout from '@/views/layouts/Main.vue'
-// import CleanLayout from '../views/layouts/Clean.vue'
+import CleanLayout from '@/views/layouts/Clean.vue'
 
 
 const routes: RouteRecordRaw[] = [
     {
         path: '/',
+        name: 'login',
+        component: () => import('@/views/Login.vue'),
+        meta: {
+            pageTitle: 'Login',
+            layout: CleanLayout,
+            breadcrumb: [
+            ],
+        },
+    },
+    {
+        path: '/inicio',
         name: 'home',
         component: () => import('@/views/Home.vue'),
         meta: {
@@ -105,7 +116,7 @@ const routes: RouteRecordRaw[] = [
             ],
         },
     },
-    { path: '/:pathMatch(.*)*', redirect: () => ({ name: 'home' }) }
+    { path: '/:pathMatch(.*)*', redirect: () => ({ name: 'login' }) }
 ];
 
 

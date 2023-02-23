@@ -1,0 +1,1 @@
+import{i as s,r as o}from"./index.b955716a.js";const c=s("counter",()=>{const e=o(0),n=o(0);function t(r){e.value=r===0?r:e.value+=r,n.value+=1}return{counter:e,numberOfChanges:n,incrementBy:t,reset:()=>t(0)}});export{c as u};
