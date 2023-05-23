@@ -12,17 +12,17 @@
     import incendios from '@/api/geoJson/incendios.js'
 
     import 'leaflet/dist/leaflet.css'
-    
+
     const theme = useTheme()
 
     const mapa = ref(null)
 
     const tile = ref(null)
-    
+
     const attribution = ref<string>('&copy; demo MyC')
-    
+
     const zoom = ref<number>(7)
-    
+
     const center = ref<latLng>([-38.050254, -72.182922])
 
     const marcadores = ref<latLng[]>([
@@ -31,7 +31,7 @@
         latLng([-35.45606, -72.66031]),
         latLng([-36.45606, -73.66031]),
     ])
-    
+
     const poligonos = ref<latLng[]>([
         latLng([-45.490946, -72.91626]),
         latLng([-45.02695, -71.619873]),
@@ -69,6 +69,7 @@
             // console.log(feature, layer);
             layer.setStyle({ ...geoJsonStyle })
             layer.on('mouseover', async () => {
+
                 layer.setStyle({ ...geoJsonStyle, fillOpacity:0.3 })
             });
             layer.on('mouseout', async () => {
@@ -79,7 +80,7 @@
             });
         },
     }
-    
+
     const zoomChange = computed(() => zoom.value)
     const url = computed(() => theme.global.current.value.dark ? 'http://www.openmap.mil/styles/dark-matter/{z}/{x}/{y}.png' : 'http://www.openmap.mil/styles/osm-bright/{z}/{x}/{y}.png')
 
@@ -172,10 +173,10 @@
                 <li>MARCADORES</li>
                 <li v-for="marcador in marcadores">
                     {{ marcador.lat }}, {{ marcador.lng }}
-                    <v-btn 
-                        size="x-small" 
-                        class="mr-2" 
-                        color="primary" 
+                    <v-btn
+                        size="x-small"
+                        class="mr-2"
+                        color="primary"
                         @click="centrar(marcador)"
                     >Ir</v-btn>
                 </li>
@@ -184,10 +185,10 @@
                 <li>INCENDIOS</li>
                 <li v-for="marcador in incendios">
                     {{ marcador.lat }}, {{ marcador.lng }}
-                    <v-btn 
-                        size="x-small" 
-                        class="mr-2" 
-                        color="primary" 
+                    <v-btn
+                        size="x-small"
+                        class="mr-2"
+                        color="primary"
                         @click="centrar(marcador)"
                     >Ir</v-btn>
                 </li>
